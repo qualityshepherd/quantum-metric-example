@@ -1,0 +1,6 @@
+e2e_tests:
+  image:
+    name: testcafe/testcafe
+    entrypoint: ["/bin/sh", "-c"]
+  script:
+    - /opt/testcafe/docker/testcafe-docker.sh chromium tests/**/*Test.js

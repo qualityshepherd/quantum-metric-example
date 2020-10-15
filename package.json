@@ -1,0 +1,19 @@
+{
+  "name": "quantum-metric-example",
+  "version": "1.0.0",
+  "description": "This is a test; it is only a test... DO NOT PANIC",
+  "main": "index.js",
+  "scripts": {
+    "testcafe": "./node_modules/.bin/testcafe",
+    "test": "npm run testcafe chrome tests/",
+    "docker:test": "docker run --rm -v `pwd`/tests:/tests -it testcafe/testcafe chromium /tests/*.js",
+    "docker:pull": "docker pull testcafe/testcafe",
+    "docker:list": "docker images -a",
+    "docker:kill": "docker rm -vf $(docker ps -a -q); docker rmi -f $(docker images -q)"
+  },
+  "author": "Brine",
+  "license": "MIT",
+  "dependencies": {
+    "testcafe": "^1.8.8"
+  }
+}
